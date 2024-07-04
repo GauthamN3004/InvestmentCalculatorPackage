@@ -7,3 +7,4 @@ src/investment_calculator_package.egg-info/SOURCES.txt
 src/investment_calculator_package.egg-info/dependency_links.txt
 src/investment_calculator_package.egg-info/requires.txt
 src/investment_calculator_package.egg-info/top_level.txt
+test/test1.py
