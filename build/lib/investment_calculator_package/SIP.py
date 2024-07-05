@@ -46,9 +46,9 @@ class SIP_Calculator():
             amount, rate_perc, years = row
             current_year += years
             monthly_compounding_rate = 1 + float(rate_perc) / 1200
-            yearly_compounding_rate = 1 + float(rate_perc) / 100
+
             cur_investment = amount * monthly_compounding_rate * (math.pow(monthly_compounding_rate, years * 12) - 1) / (monthly_compounding_rate - 1)
-            final_investment_amount += (cur_investment * math.pow(yearly_compounding_rate, total_investment_term - current_year))
+            final_investment_amount += (cur_investment * math.pow(monthly_compounding_rate, (total_investment_term - current_year) * 12))
             
         print(final_investment_amount)
         

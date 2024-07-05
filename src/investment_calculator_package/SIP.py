@@ -4,6 +4,7 @@ import math
 class SIP_Calculator():
     def __init__(self):
         self.investment_dataframe = None
+        self.final_investment_amount = -1
 
     def validate_dataframe(self, dataframe):
         if not isinstance(dataframe, pd.DataFrame):
@@ -29,16 +30,7 @@ class SIP_Calculator():
 
         return
 
-        
-    def add_investments(self, csv_location, is_header_present = True):
-        header = None
-        if is_header_present:
-            header = 0
-
-        dataframe = pd.read_csv(csv_location, header = header)
-        self.validate_dataframe(dataframe)
-        self.investment_dataframe = dataframe
-
+    def calculate_total_investment(self):
         total_investment_term = self.investment_dataframe['number_of_years'].sum()
         final_investment_amount, current_year = 0, 0
 
@@ -46,10 +38,23 @@ class SIP_Calculator():
             amount, rate_perc, years = row
             current_year += years
             monthly_compounding_rate = 1 + float(rate_perc) / 1200
-            yearly_compounding_rate = 1 + float(rate_perc) / 100
             cur_investment = amount * monthly_compounding_rate * (math.pow(monthly_compounding_rate, years * 12) - 1) / (monthly_compounding_rate - 1)
-            final_investment_amount += (cur_investment * math.pow(yearly_compounding_rate, total_investment_term - current_year))
-            
-        print(final_investment_amount)
+            final_investment_amount += (cur_investment * math.pow(monthly_compounding_rate, (total_investment_term - current_year) * 12))
+
+        return final_investment_amount
+
         
+    def update_investments(self, csv_location, is_header_present = True):
+        header = None
+        if is_header_present:
+            header = 0
+
+        dataframe = pd.read_csv(csv_location, header = header)
+        self.validate_dataframe(dataframe)
+        self.investment_dataframe = dataframe
+        self.final_investment_amount = self.calculate_total_investment()
+
         return
+
+    def get_investment_value(self):
+        return self.final_investment_amount
