@@ -1,5 +1,6 @@
 README.md
 setup.py
+src/investment_calculator_package/Lumpsum.py
 src/investment_calculator_package/SIP.py
 src/investment_calculator_package/__init__.py
 src/investment_calculator_package.egg-info/PKG-INFO
