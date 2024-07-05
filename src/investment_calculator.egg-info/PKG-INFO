@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: investment_calculator
+Version: 1.1.0
+Summary: This package is used to calculate your investment returns.
+Home-page: https://github.com/GauthamN3004/InvestmentCalculatorPackage
+Author: Gautham
+Requires-Python: >=3.6
+Requires-Dist: pandas
