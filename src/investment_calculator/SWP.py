@@ -1,7 +1,7 @@
 import pandas as pd
 from .NumeralSystem import get_indian_numeral
 
-class SWP_Calculator:
+class SWPCalculator:
     def __init__(self, initial_investment_amount, rate_of_interest, initial_monthly_withdrawal, inflation_rate, number_of_years):
         self.initial_investment_amount = initial_investment_amount
         self.rate_of_interest = rate_of_interest

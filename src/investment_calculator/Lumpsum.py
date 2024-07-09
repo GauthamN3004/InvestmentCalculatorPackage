@@ -1,6 +1,6 @@
 import math
 
-class Lumpsum_Calculator:
+class LumpsumCalculator:
     def __init__(self, amount, rate_of_interest, investment_term_in_years):
         self.amount = amount
         self.rate_of_interest = rate_of_interest

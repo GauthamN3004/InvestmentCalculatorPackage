@@ -1,7 +1,7 @@
 import pandas as pd
 import math
 
-class SIP_Calculator():
+class SIPCalculator():
     def __init__(self):
         self.investment_dataframe = None
         self.final_investment_amount = -1
