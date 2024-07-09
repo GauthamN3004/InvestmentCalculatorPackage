@@ -1,5 +1,8 @@
 from setuptools import setup, find_packages
 
+with open("README.md", "r") as f:
+    description = f.read()
+
 setup(
     name='investment_calculator',
     author='Gautham',
@@ -10,8 +13,6 @@ setup(
     packages=find_packages(where='src'),
     python_requires='>=3.6',
     install_requires=['pandas'],
-    # extras_require={
-    #     'dev': ['check-manifest'],
-    #     # 'test': ['coverage'],
-    # },
+    long_description=description,
+    long_description_content_type='text/markdown',
 )

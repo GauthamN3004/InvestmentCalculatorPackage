@@ -78,3 +78,6 @@ This functions returns a dataframe which tells you how much money remains of you
 
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request.
+
+## Link
+https://pypi.org/project/investment-calculator/
